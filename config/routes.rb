@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     root 'dashboard#index'
 
     devise_for :super_users, path: ''
-
   end
   
   namespace :patient_admin do
@@ -21,5 +20,8 @@ Rails.application.routes.draw do
 
     devise_for :doctor_users, path: ''
     
+    resource :signup do
+      post :basic
+    end
   end
 end
