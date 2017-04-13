@@ -1,3 +1,9 @@
 .row.float-e-margins.text-center
   .col-md-12
-    | Home controller
+    = link_to 'Doctor Sign In', '/doctor_admin/sign_in', class: 'btn btn-primary m-r-sm'
+    = link_to 'Doctor Sign Up', '/doctor_admin/sign_up', class: 'btn btn-primary m-r-sm'
+  .col-md-12
+    = link_to 'Patient Sign In', '/patient_admin/sign_in', class: 'btn btn-primary m-r-sm'
+    = link_to 'Patient Sign Up', '/patient_admin/sign_up', class: 'btn btn-primary m-r-sm'
+  .col-md-12
+    = link_to 'Super Admin', '/super_admin/sign_in', class: 'btn btn-primary'
