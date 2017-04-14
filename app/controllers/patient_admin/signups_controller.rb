@@ -3,6 +3,8 @@ class PatientAdmin::SignupsController < PatientAdmin::ApplicationController
 
   before_action :set_user
 
+  layout 'patient_auth'
+
   def basic
     @user.update(patient_user_params)
   end
