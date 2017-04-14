@@ -1,0 +1,50 @@
+html, body {
+  min-height: 100%;
+  position: relative;
+}
+
+.no-side-margins {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.m-t-0 {
+  margin-top: 0 !important;
+}
+
+.m-b-0 {
+  margin-bottom: 0 !important;
+}
+
+.p-t-0 {
+  padding-top: 0 !important;
+}
+
+.p-l-0 {
+  padding-left: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .text-center-xs {
+    text-align: center;
+  }
+}
+
+.trailing-colon {
+  &:after {
+    content: ': '
+  }
+}
+
+.xs-prompt {
+  font-size: 11px;
+  margin-left: 2px;
+}
+
+.pre-white-spaces {
+  white-space: pre-wrap;
+}
+
+.buorg {
+  display: none;
+}

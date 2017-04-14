@@ -1,0 +1,9 @@
+.row.border-bottom
+  nav.navbar.navbar-static-top.m-b-0 role="navigation"
+    ul.nav.navbar-top-links
+      li.navbar-left
+        = image_tag 'logo.png', size: '250x50', class: 'header-logo m-t-xs'
+      li.navbar-right
+        = link_to(url_for(controller: 'sessions', action: 'destroy'), method: :delete) do
+          i.fa.fa-sign-out
+          | Log out

@@ -1,0 +1,33 @@
+.nav > li > a i {
+  width: 15px !important;
+  text-align: center;
+}
+
+.nav > li.active > a {
+  padding-left: 21px !important;
+}
+
+.nav > li.active .nav-second-level a {
+  padding-left: 48px !important;
+}
+
+body.mini-navbar .nav > li.active .nav-second-level a {
+  padding-left: 15px !important;
+}
+
+.body-min-width {
+  min-width: 320px;
+}
+
+#wrapper {
+  height: 100%;
+}
+
+#page-wrapper {
+  position: relative;
+  min-height: 100% !important;
+}
+
+#page-content {
+  padding-bottom: 80px;
+}

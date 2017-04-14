@@ -8,10 +8,26 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+/log/*.log
+/tmp
+/public/assets
+/public/uploads
+/.idea
 
-# Ignore Byebug command history file.
-.byebug_history
+# certificates
+/certs
+
+# foreman
+/Procfile.local
+
+# unicorn
+/unicorn.local.rb
+
+/*/.DS_Store
+/app/assets/.DS_store
+.DS_Store
+
+/dump.rdb
+*.swp
+*.bak
+~
