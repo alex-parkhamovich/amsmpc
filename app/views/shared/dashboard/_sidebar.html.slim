@@ -17,25 +17,25 @@ nav.navbar-default.navbar-static-side role="navigation"
               span.text-muted.text-xs.block
 
       li.active
-        = link_to root_path do
+        = link_to root_path_for(user) do
           i.fa.fa-ambulance
           span.nav-label= t 'dashboard.common.my_home'
       li
-        = link_to root_path do
+        = link_to profile_path_for(user) do
           i.fa.fa-user-md
           span.nav-label= t 'dashboard.common.my_profile'
 
       li
-        = link_to root_path, target: '_blank' do
+        = link_to terms_path_for(user) do
           i.fa.fa-list-alt
           span.nav-label= t 'dashboard.common.terms_of_use'
 
       li
-        = link_to root_path do
+        = link_to help_path_for(user) do
           i.fa.fa-question
           span.nav-label= t 'dashboard.common.help'
 
       li
-        = link_to root_path do
+        = link_to contact_us_path_for(user) do
           i.fa.fa-envelope
           span.nav-label= t 'dashboard.common.contact_us'
