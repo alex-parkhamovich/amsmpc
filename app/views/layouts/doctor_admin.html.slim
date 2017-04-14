@@ -18,11 +18,13 @@ html lang="en"
     = favicon_link_tag 'favicon.ico', rel: 'shortcut icon'
     = javascript_include_tag 'application'
     
-  body.auth.white-bg
+  body.body-min-width
     = yield(:modals)
-    .wrapper
-      .page-wrapper
+    #wrapper
+      = render partial: 'shared/dashboard/sidebar', locals: { user: current_doctor_admin_doctor_user }
+      #page-wrapper.gray-bg
         = render 'shared/header_authenticated'
-        .container.page-content
+        #page-content
           = yield
-          = render 'shared/auth_footer'
+
+        = render 'shared/auth_footer'

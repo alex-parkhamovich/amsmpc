@@ -26,6 +26,7 @@ gem 'slim-rails'
 
 gem 'devise'
 gem 'simple_form'
+gem 'simple-navigation'
 
 group :development, :test do
   gem 'byebug', platform: :mri

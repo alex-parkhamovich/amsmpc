@@ -3,6 +3,8 @@ class DoctorAdmin::ApplicationController < ApplicationController
 
   layout 'doctor_admin'
 
+  helper_method :current_user, :namespace
+
   def namespace
     :doctor_admin
   end
