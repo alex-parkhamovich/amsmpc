@@ -4,4 +4,8 @@ class PatientAdmin::ApplicationController < ApplicationController
   def namespace
     :patient_admin
   end
+
+  def current_user
+    current_patient_admin_patient_user
+  end
 end

@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
     devise_for :patient_users, path: ''
 
+    resource :signup do 
+      post :basic
+    end
   end
 
   namespace :doctor_admin do

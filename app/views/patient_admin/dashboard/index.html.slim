@@ -1,2 +1,2 @@
 .text-center 
-  | patient_user/dashboard/index.html.slim
+  =link_to t('registration.common.cancel_registration'), url_for(controller: 'sessions', action: 'destroy'), method: :delete
