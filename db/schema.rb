@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413110537) do
+ActiveRecord::Schema.define(version: 20170417102416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "doctor_personals", force: :cascade do |t|
+    t.integer  "doctor_user_id",                         null: false
+    t.string   "address",                                null: false
+    t.string   "city",                                   null: false
+    t.string   "phone",                                  null: false
+    t.string   "clinic",           default: "no_clinic"
+    t.string   "speciality",                             null: false
+    t.string   "license_id_photo",                       null: false
+    t.string   "face_photo",                             null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
 
   create_table "doctor_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -33,6 +46,18 @@ ActiveRecord::Schema.define(version: 20170413110537) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_doctor_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_doctor_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "patient_personals", force: :cascade do |t|
+    t.integer  "patient_user_id", null: false
+    t.string   "address",         null: false
+    t.string   "city",            null: false
+    t.string   "phone",           null: false
+    t.string   "gender",          null: false
+    t.string   "face_photo",      null: false
+    t.string   "id_photo",        null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "patient_users", force: :cascade do |t|
