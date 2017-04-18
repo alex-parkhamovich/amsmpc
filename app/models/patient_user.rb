@@ -1,5 +1,5 @@
 class PatientUser < ApplicationRecord
-  has_many :patient_personals
+  has_one :patient_personals
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

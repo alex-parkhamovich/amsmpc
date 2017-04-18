@@ -6,7 +6,21 @@ class DoctorAdmin::SignupsController < DoctorAdmin::ApplicationController
   layout 'doctor_auth'
   
   def basic
-    @user.update(doctor_user_params)
+    if @user.update(doctor_user_params)
+      status = :ok
+      sign_in_and_redirect @user
+    else
+      status = :unprocessable_entity
+      redirect_to new_doctor_admin_doctor_user_registration_path
+    end
+
+    
+  end
+
+  def personal
+    @personal = @user.doctor_personal 
+
+    render json: @personal
   end
 
   private 
@@ -17,5 +31,9 @@ class DoctorAdmin::SignupsController < DoctorAdmin::ApplicationController
 
   def doctor_user_params
     params.require(:doctor_user).permit(:first_name, :last_name, :birthdate, :email, :password, :password_confirmation)
+  end
+
+  def doctor_user_personal_params
+    params.require(:doctor_personal).permit(:address, :phone)
   end
 end
