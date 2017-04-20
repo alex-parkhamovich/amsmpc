@@ -1,3 +1,16 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root 'home#index'
+
+  namespace :super_admin do
+    devise_for :super_users, path: ''
+  end
+  
+  namespace :patient_admin do
+    devise_for :patient_users, path: ''
+  end
+
+  namespace :doctor_admin do
+    devise_for :doctor_users, path: ''
+  end
 end
