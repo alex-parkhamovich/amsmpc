@@ -1,7 +1,7 @@
 class DoctorUser < ApplicationRecord
   include UserModels
 
-  REGISTRATION_STATUSES = %w(personal completes).freeze
+  REGISTRATION_STATUSES = %w(completed).freeze
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

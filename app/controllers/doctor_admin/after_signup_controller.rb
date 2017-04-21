@@ -3,7 +3,7 @@ class DoctorAdmin::AfterSignupController < DoctorAdmin::ApplicationController
  
   steps :personal
 
-  layout 'doctor_admin'
+  layout 'doctor_auth'
 
   def show
     @personal = current_user.doctor_personal
@@ -12,11 +12,9 @@ class DoctorAdmin::AfterSignupController < DoctorAdmin::ApplicationController
 
   def update 
     @personal = current_user.doctor_personal
-    binding.pry
+    status = 'completed'
     if @personal.update_attributes(doctor_personal_params)
-      current_user.new_registration_status(:completed)
-    else
-      errors = @personal.errors
+      current_user.new_registration_status(status)
     end
     render_wizard @personal
   end
