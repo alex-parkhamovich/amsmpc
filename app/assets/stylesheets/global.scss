@@ -1,0 +1,62 @@
+.loginscreen.middle-box {
+  max-width: 285px;
+  width: 100%;
+}
+
+.sidebar-avatar-container {
+  width: 100%;
+  height: 100px;
+
+  .sidebar-avatar {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+.active-status {
+  color: #5f5;
+}
+
+.inactive-status {
+  color: #999;
+}
+
+.text-main-green {
+  color: #38a855;
+}
+
+.dropdown-toggle {
+  cursor: default;
+  strong {
+    color: #dfe4ed;
+  }
+}
+
+.partner-logo-xs {
+  max-height: 30px;
+}
+
+.partner-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.modal-scrollable-text {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.message-status {
+  color: #999;
+  &.new {
+    color: #090;
+  }
+}
+
+.signature {
+  .signature-name {
+    font-size: 30px;
+  }
+}
