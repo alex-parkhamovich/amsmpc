@@ -27,6 +27,9 @@ gem 'slim-rails'
 gem 'devise'
 gem 'simple_form'
 gem 'simple-navigation'
+gem 'wicked'
+gem 'toastr-rails'
+gem 'date_validator'
 
 group :development, :test do
   gem 'byebug', platform: :mri

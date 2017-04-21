@@ -17,9 +17,7 @@ Rails.application.routes.draw do
 
     devise_for :doctor_users, path: ''
     
-    resource :signup do
-      post :basic, :personal
-    end
+    resources :after_signup
 
     resource :profile, only: [:show]
   end

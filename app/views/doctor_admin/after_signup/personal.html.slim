@@ -1,7 +1,7 @@
+h1.text-center Personal
 h1= t 'registration.common.steps.more_info'
-section.pos-r.js-signup-hidden.hidden
-  = binding.pry
-  = simple_form_for resource.doctor_personal, url: personal_doctor_admin_signup_path do |f|
+section.pos-r
+  = simple_form_for @personal, url: wizard_path, method: :put  do |f|
     fieldset
       .row
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
@@ -16,11 +16,7 @@ section.pos-r.js-signup-hidden.hidden
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
           .form-group.no-side-margins
             label= t 'registration.common.fields.state'
-            = f.input_field :clinic, collection: states_options_list, :include_blank => false, required: true, tabindex: 3
-        .col-lg-6.col-md-6.col-sm-12.col-xs-12
-          .form-group.no-side-margins
-            label= t 'registration.common.fields.zip'
-            = f.input_field :zip_code, class: 'js-zip-input', required: true, tabindex: 4
+            = f.input_field :clinic
       .row
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
           .form-group.no-side-margins
@@ -30,6 +26,15 @@ section.pos-r.js-signup-hidden.hidden
           .form-group.no-side-margins
             label= t 'registration.common.fields.phone'
             = f.input_field :speciality, class: 'js-phone-input', required: true, tabindex: 5
+      .row 
+        .col-lg-6.col-md-6.col-sm-12.col-xs-12
+          .form-group.no-side-margins
+            label= t 'registration.common.fields.phone'
+            = f.input_field :license_id_photo, class: 'js-phone-input', required: true, tabindex: 5
+        .col-lg-6.col-md-6.col-sm-12.col-xs-12
+          .form-group.no-side-margins
+            label= t 'registration.common.fields.phone'
+            = f.input_field :face_photo, class: 'js-phone-input', required: true, tabindex: 5
       .row
         .col-sm-12
           .form-group.no-side-margins
