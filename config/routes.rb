@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     
     resources :after_signup
 
-    resource :profile, only: [:show]
+    resource :profile, only: [:show, :update]
   end
   
   namespace :patient_admin do
