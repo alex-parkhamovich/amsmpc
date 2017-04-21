@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     case resource
       when DoctorUser then resource.sign_up_completed? ? doctor_admin_root_path : doctor_admin_after_signup_path(:personal)
-      when PatientUser then patient_admin_root_path
+      when PatientUser then resource.sign_up_completed? ? patient_admin_root_path : patient_admin_after_signup_path(:personal)
       when SuperUser then super_admin_root_path
       else root_path
     end

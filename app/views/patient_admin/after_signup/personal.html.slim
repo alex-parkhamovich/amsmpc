@@ -15,26 +15,22 @@ section.pos-r
       .row
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
           .form-group.no-side-margins
-            label= t 'registration.common.fields.state'
-            = f.input_field :clinic, required: true, tabindex: 3
+            label= t 'registration.common.fields.gender'
+            = f.input_field :gender, tabindex: 3
       .row
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
           .form-group.no-side-margins
             label= t 'registration.common.fields.phone'
             = f.input_field :phone, class: 'js-phone-input', required: true, tabindex: 4
-        .col-lg-6.col-md-6.col-sm-12.col-xs-12
-          .form-group.no-side-margins
-            label= t 'registration.common.fields.phone'
-            = f.input_field :speciality, class: 'js-phone-input', required: true, tabindex: 5
       .row 
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
           .form-group.no-side-margins
-            label= t 'registration.common.fields.phone'
-            = f.input_field :license_id_photo, class: 'js-phone-input', required: true, tabindex: 6
+            label= t 'registration.common.fields.id_photo'
+            = f.input_field :id_photo, class: 'js-phone-input', required: true, tabindex: 5
         .col-lg-6.col-md-6.col-sm-12.col-xs-12
           .form-group.no-side-margins
-            label= t 'registration.common.fields.phone'
-            = f.input_field :face_photo, class: 'js-phone-input', required: true, tabindex: 7
+            label= t 'registration.common.fields.face_photo'
+            = f.input_field :face_photo, class: 'js-phone-input', required: true, tabindex: 6
       .row
         .col-sm-12
           .form-group.no-side-margins

@@ -1,5 +1,4 @@
 class DoctorAdmin::ProfilesController < DoctorAdmin::ApplicationController
-  
   before_action :set_user
 
   def show
