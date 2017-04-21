@@ -1,37 +1,31 @@
-h1.text-center Personal
-h1 | Please fill this states fo rmore information 
-section.pos-r
-  = simple_form_for @personal, url: wizard_path, method: :put  do |f|
-    fieldset
-      .row
-        .col-lg-6.col-md-6.col-sm-12.col-xs-12
-          .form-group.no-side-margins
-            label= t 'registration.common.fields.address'
-            = f.input_field :address, required: true, autofocus: true, tabindex: 1
-        .col-lg-6.col-md-6.col-sm-12.col-xs-12
-          .form-group.no-side-margins
-            label= t 'registration.common.fields.city'
-            = f.input_field :city, required: true, tabindex: 2
-      .row
-        .col-lg-6.col-md-6.col-sm-12.col-xs-12
-          .form-group.no-side-margins
-            label= t 'registration.common.fields.gender'
-            = f.input_field :gender, tabindex: 3
-      .row
-        .col-lg-6.col-md-6.col-sm-12.col-xs-12
-          .form-group.no-side-margins
-            label= t 'registration.common.fields.phone'
-            = f.input_field :phone, class: 'js-phone-input', required: true, tabindex: 4
-      .row 
-        .col-lg-6.col-md-6.col-sm-12.col-xs-12
-          .form-group.no-side-margins
-            label= t 'registration.common.fields.id_photo'
-            = f.input_field :id_photo, class: 'js-phone-input', required: true, tabindex: 5
-        .col-lg-6.col-md-6.col-sm-12.col-xs-12
-          .form-group.no-side-margins
-            label= t 'registration.common.fields.face_photo'
-            = f.input_field :face_photo, class: 'js-phone-input', required: true, tabindex: 6
-      .row
-        .col-sm-12
-          .form-group.no-side-margins
-            = f.submit 'Sign Up', class: 'btn btn-success'
+.row
+  .col-lg-12
+    h1.text-center Personal
+    h2.text-center Please fill this statements for finishing registration and starting your visits
+    .row
+      .col-md-12
+        = simple_form_for @personal, url: wizard_path, html: { method: :put , class: 'form-horizontal' } do |f|
+          .form-group
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label= t 'registration.common.fields.address'
+              = f.input_field :address, required: true, autofocus: true, tabindex: 1, class: 'form-control'
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label= t 'registration.common.fields.city'
+              = f.input_field :city, required: true, tabindex: 2, class: 'form-control'
+          .form-group
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label= t 'registration.common.fields.gender'
+              = f.input_field :gender, required: true, tabindex: 3, class: 'form-control'
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label= t 'registration.common.fields.phone'
+              = f.input_field :phone, required: true, tabindex: 4, class: 'form-control'
+          .form-group
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label= t 'registration.common.fields.id_photo'
+              = f.input_field :id_photo, required: true, tabindex: 5, class: 'form-control'
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label= t 'registration.common.fields.face_photo'
+              = f.input_field :face_photo, required: true, tabindex: 6, class: 'form-control'
+          .row
+            .col-sm-12
+              = f.submit 'Finish Registration', class: 'btn btn-primary'
