@@ -34,6 +34,7 @@ gem 'date_validator'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
+  gem 'bullet'
 end
 
 group :development do

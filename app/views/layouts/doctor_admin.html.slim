@@ -25,6 +25,7 @@ html lang="en"
       #page-wrapper.gray-bg
         = render 'shared/header_authenticated'
         #page-content
+          = content_tag(:div, flash[:alert], class: "alert alert-danger") if flash[:alert]
+          = content_tag(:div, flash[:notice], class: "alert alert-success") if flash[:notice]
           = yield
-
         = render 'shared/auth_footer'

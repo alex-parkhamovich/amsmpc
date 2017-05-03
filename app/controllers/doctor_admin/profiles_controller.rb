@@ -6,9 +6,10 @@ class DoctorAdmin::ProfilesController < DoctorAdmin::ApplicationController
 
   def update 
     if @user.update_attributes(update_params)
-      sign_in @user, :bypass => true
+      flash[:notice] = t('flash.success') 
       redirect_to doctor_admin_profile_path
     else
+      flash.now[:alert] = @user.errors.full_messages.join('. ')
       render :show
     end
   end

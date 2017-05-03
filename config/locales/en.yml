@@ -1,4 +1,6 @@
 en:
+  flash: 
+    success: 'Successfully updated!'
   roles:
     doctor: 'Doctor'
     patient: 'Patient'

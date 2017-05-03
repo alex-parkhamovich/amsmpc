@@ -8,47 +8,50 @@
           .col-sm-12.col-md-12.col-lg-8
             = simple_form_for @user, url: doctor_admin_profile_path, html: { method: :put, class: 'form-horizontal' } do |f|
               .form-group
-                label.col-sm-2.control-label
-                  | Last Name
+                label.col-sm-2.control-label= t 'registration.common.fields.last_name'
                 .col-sm-10
-                  = f.input_field :last_name, required: true
+                  = f.input_field :last_name, required: true, class: 'form-control'
               .form-group
-                label.col-sm-2.control-label
-                  | First Name
+                label.col-sm-2.control-label= t 'registration.common.fields.first_name'
                 .col-sm-10
-                  = f.input_field :first_name, required: true
+                  = f.input_field :first_name, required: true, class: 'form-control'
               .form-group
-                label.col-sm-2.control-label
-                  | Date of Birthday
+                label.col-sm-2.control-label= t 'registration.common.fields.birthdate'
                 .col-sm-10
-                  = f.input_field :birthdate, as: :string, required: true, data: {mask: '99/99/9999'}
+                  = f.input_field :birthdate, as: :string, required: true, data: {mask: '99/99/9999'}, class: 'form-control'
               .form-group
-                label.col-sm-2.control-label
-                  | Email Address
+                label.col-sm-2.control-label= t 'registration.common.fields.email_address'
                 .col-sm-10
-                  = f.input_field :email, required: true, pattern: '.*', disabled: true
+                  = f.input_field :email, required: true, pattern: '.*', disabled: true, class: 'form-control'
               = f.simple_fields_for :doctor_personal do |fp|
-                .form-group.no-side-margins
+                .form-group
                   label.col-sm-2.control-label= t 'registration.common.fields.address'
                   .col-sm-10
-                  = fp.input_field :address, required: true, autofocus: true, tabindex: 1
-                .form-group.no-side-margins
-                      label.col-sm-2.control-label= t 'registration.common.fields.city'
-                      = fp.input_field :city, required: true, tabindex: 2
-                .form-group.no-side-margins
+                    = fp.input_field :address, required: true, autofocus: true, tabindex: 1, class: 'form-control'
+                .form-group
+                  label.col-sm-2.control-label= t 'registration.common.fields.city'
+                  .col-sm-10
+                    = fp.input_field :city, required: true, tabindex: 2, class: 'form-control'
+                .form-group
                   label.col-sm-2.control-label= t 'registration.common.fields.clinic'
-                  = fp.input_field :clinic, required: true, tabindex: 3
-                .form-group.no-side-margins
-                  label.col-sm-2.control-label= t 'registration.common.fields.phone'
-                  = fp.input_field :phone, class: 'js-phone-input', required: true, tabindex: 4
-                .form-group.no-side-margins
+                  .col-sm-10
+                    =fp.input_field :clinic, required: true, tabindex: 3, class: 'form-control'
+                .form-group
                   label.col-sm-2.control-label= t 'registration.common.fields.speciality'
-                  = fp.input_field :speciality, class: 'js-phone-input', required: true, tabindex: 5
-                .form-group.no-side-margins
+                  .col-sm-10
+                    = fp.input_field :speciality, required: true, tabindex: 4, class: 'form-control'
+                .form-group
+                  label.col-sm-2.control-label= t 'registration.common.fields.phone'
+                  .col-sm-10
+                    = fp.input_field :phone, required: true, tabindex: 5, class: 'form-control'
+                .form-group
                   label.col-sm-2.control-label= t 'registration.common.fields.license_id_photo'
-                  = fp.input_field :license_id_photo, class: 'js-phone-input', required: true, tabindex: 6
-                .form-group.no-side-margins
+                  .col-sm-10
+                    = fp.input_field :license_id_photo, required: true, tabindex: 6, class: 'form-control'
+                .form-group
                   label.col-sm-2.control-label= t 'registration.common.fields.face_photo'
-                  = fp.input_field :face_photo, class: 'js-phone-input', required: true, tabindex: 7
-                .form-group.no-side-margins.text-center.col-md-4
-                  = f.submit class: 'btn btn-primary'
+                  .col-sm-10
+                    = fp.input_field :face_photo, required: true, tabindex: 7, class: 'form-control'
+                .form-group
+                  .col-md-6.text-center
+                    = f.submit class: 'btn btn-primary'

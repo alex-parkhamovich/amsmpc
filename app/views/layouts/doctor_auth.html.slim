@@ -24,5 +24,7 @@ html lang="en"
       .page-wrapper
         = render 'shared/auth_header'
         .container.page-content
+          = content_tag(:div, flash[:alert], class: "alert alert-danger") if flash[:alert]
+          = content_tag(:div, flash[:notice], class: "alert alert-success") if flash[:notice]
           = yield
-          = render 'shared/auth_footer'
+        = render 'shared/auth_footer'

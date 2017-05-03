@@ -39,15 +39,15 @@
                 .form-group
                   label.col-sm-2.control-label= t 'registration.common.fields.phone'
                   .col-sm-10
-                    = fp.input_field :phone, class: 'js-phone-input', required: true, tabindex: 4, class: 'form-control'
+                    = fp.input_field :phone, required: true, tabindex: 4, class: 'form-control'
                 .form-group
-                  label.col-sm-2.control-label= t 'registration.common.fields.license_id_photo'
+                  label.col-sm-2.control-label= t 'registration.common.fields.id_photo'
                   .col-sm-10
-                    = fp.input_field :id_photo, class: 'js-phone-input', required: true, tabindex: 5, class: 'form-control'
+                    = fp.input_field :id_photo, required: true, tabindex: 5, class: 'form-control'
                 .form-group
                   label.col-sm-2.control-label= t 'registration.common.fields.face_photo'
                   .col-sm-10
-                    = fp.input_field :face_photo, class: 'js-phone-input', required: true, tabindex: 6, class: 'form-control'
+                    = fp.input_field :face_photo, required: true, tabindex: 6, class: 'form-control'
                 .form-group
                   .col-md-6.text-center
                     = f.submit class: 'btn btn-primary'

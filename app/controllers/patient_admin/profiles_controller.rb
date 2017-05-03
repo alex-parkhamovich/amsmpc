@@ -5,8 +5,8 @@ class PatientAdmin::ProfilesController < PatientAdmin::ApplicationController
   end
 
   def update 
-    if @user.update_attributes(update_params)
-      sign_in @user, :bypass => true
+    if @user.update(update_params)
+      flash.now[:alert] = list_saving_errors(@user)
       redirect_to patient_admin_profile_path
     else
       render :show
