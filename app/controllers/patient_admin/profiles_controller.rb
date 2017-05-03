@@ -1,22 +1,11 @@
 class PatientAdmin::ProfilesController < PatientAdmin::ApplicationController
   before_action :set_user
-
-  def show
-  end
-
-  def update 
-    if @user.update(update_params)
-      flash.now[:alert] = list_saving_errors(@user)
-      redirect_to patient_admin_profile_path
-    else
-      render :show
-    end
-  end
+  include ProfilesControllerConcern
 
   private
 
   def set_user
-    @user = current_user || PatientUser.new
+    @resource = current_user || PatientUser.new
   end
 
   def update_params

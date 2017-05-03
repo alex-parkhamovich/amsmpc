@@ -1,5 +1,5 @@
 class DoctorAdmin::SessionsController < Devise::SessionsController
-  layout 'doctor_auth'
+  layout 'auth'
 
   def new
     super{ |resource| return render 'shared/sessions/new' }

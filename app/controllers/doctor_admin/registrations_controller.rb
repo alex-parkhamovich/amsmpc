@@ -1,5 +1,5 @@
 class DoctorAdmin::RegistrationsController < Devise::RegistrationsController
-  layout 'doctor_auth'
+  layout 'auth'
 
   private
 

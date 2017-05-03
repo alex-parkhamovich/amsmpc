@@ -1,23 +1,11 @@
 class DoctorAdmin::ProfilesController < DoctorAdmin::ApplicationController
   before_action :set_user
-
-  def show
-  end
-
-  def update 
-    if @user.update_attributes(update_params)
-      flash[:notice] = t('flash.success') 
-      redirect_to doctor_admin_profile_path
-    else
-      flash.now[:alert] = @user.errors.full_messages.join('. ')
-      render :show
-    end
-  end
+  include ProfilesControllerConcern
 
   private
 
   def set_user
-    @user = current_user || DoctorUser.new
+    @resource = current_user || DoctorUser.new
   end
 
   def update_params

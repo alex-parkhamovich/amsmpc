@@ -6,7 +6,7 @@
       .ibox-content
         .row
           .col-sm-12.col-md-12.col-lg-8
-            = simple_form_for @user, url: patient_admin_profile_path, html: { method: :put, class: 'form-horizontal' } do |f|
+            = simple_form_for @resource, url: patient_admin_profile_path, html: { method: :put, class: 'form-horizontal' } do |f|
               .form-group
                 label.col-sm-2.control-label= t 'registration.common.fields.last_name'
                 .col-sm-10

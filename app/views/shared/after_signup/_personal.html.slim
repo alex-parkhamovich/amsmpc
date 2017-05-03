@@ -1,0 +1,44 @@
+.row
+  .col-lg-12
+    h1.text-center Personal
+    h2.text-center Please fill this statements for finishing registration and starting your visits
+    .row
+      .col-md-12
+        = simple_form_for @personal, url: wizard_path, html: { method: :put , class: 'form-horizontal' } do |f|
+          .form-group
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label= t 'registration.common.fields.address'
+              = f.input_field :address, required: true, autofocus: true, tabindex: 1, class: 'form-control'
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label= t 'registration.common.fields.city'
+              = f.input_field :city, required: true, tabindex: 2, class: 'form-control'
+          .form-group
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label= t 'registration.common.fields.phone'
+              = f.input_field :phone, required: true, tabindex: 3, class: 'form-control'
+            - if doctor?(current_user)
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12
+                label= t 'registration.common.fields.speciality'
+                = f.input_field :speciality, required: true, tabindex: 4, class: 'form-control'
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12
+                label= t 'registration.common.fields.clinic'
+                = f.input_field :clinic, required: true, tabindex: 5, class: 'form-control'
+            - else  
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12
+                label= t 'registration.common.fields.gender'
+                = f.input_field :gender, required: true, tabindex: 4, class: 'form-control'
+          .form-group
+            - if doctor?(current_user)
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12
+                label= t 'registration.common.fields.license_id_photo'
+                = f.input_field :license_id_photo, required: true, tabindex: 6, class: 'form-control'
+            - else 
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12
+                label= t 'registration.common.fields.id_photo'
+                = f.input_field :id_photo, required: true, tabindex: 6, class: 'form-control'
+            .col-lg-6.col-md-6.col-sm-12.col-xs-12
+              label= t 'registration.common.fields.face_photo'
+              = f.input_field :face_photo, required: true, tabindex: 7, class: 'form-control'
+          .row
+            .col-sm-12
+              = f.submit 'Finish Registration', class: 'btn btn-primary'

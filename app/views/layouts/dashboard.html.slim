@@ -18,12 +18,14 @@ html lang="en"
     = favicon_link_tag 'favicon.ico', rel: 'shortcut icon'
     = javascript_include_tag 'application'
     
-  body.body-min-width
+  body
     = yield(:modals)
     #wrapper
-      = render partial: 'shared/dashboard/sidebar', locals: { user: current_patient_admin_patient_user }
+      = render partial: 'shared/dashboard/sidebar', locals: { user: current_user }
       #page-wrapper.gray-bg
         = render 'shared/header_authenticated'
         #page-content
+          = content_tag(:div, flash[:alert], class: "alert alert-danger") if flash[:alert]
+          = content_tag(:div, flash[:notice], class: "alert alert-success") if flash[:notice]
           = yield
         = render 'shared/auth_footer'
