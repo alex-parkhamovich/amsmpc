@@ -1,3 +1,19 @@
 en:
   flash:
     success: 'Successfully Updated!'
+  fields: 
+    email: 'Email'
+    password: 'Password'
+  session:
+    welcome: 'Hola'
+    buttons:
+      sign_in: 'Sign In'
+      forgot_password: 'Forgot Password?'
+  dashboard:
+    common: 
+      my_profile: 'My Profile'
+
+  registration:
+    common:
+      fields:
+        last_name: 'Last Name'

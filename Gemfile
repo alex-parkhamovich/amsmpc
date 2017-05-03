@@ -35,6 +35,12 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
   gem 'bullet'
+  gem 'rspec-rails'
+  gem 'webmock', require: false
+  gem 'capybara-webkit'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :development do
