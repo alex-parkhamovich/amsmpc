@@ -4,10 +4,7 @@ feature 'patient dashboard' do
   let!(:patient_user) { create(:patient_user, :active, :with_patient_personal) }
 
   before :each do
-    visit new_patient_admin_patient_user_session_path
-    fill_in 'Email', with: patient_user.email
-    fill_in 'Password', with: 'password'
-    click_button 'Sign In'
+    sign_in(patient_user)
   end
 
   scenario 'successfully login' do

@@ -20,4 +20,5 @@ RSpec.configure do |config|
   end
 
   config.include FactoryGirl::Syntax::Methods
+  config.include Features::SessionHelpers, type: :feature
 end
