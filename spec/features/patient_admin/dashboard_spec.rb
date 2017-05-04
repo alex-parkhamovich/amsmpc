@@ -22,4 +22,10 @@ feature 'patient dashboard' do
 
     expect(page).to have_content('Successfully Updated!')
   end
+
+  scenario 'log out redirect' do
+    click_link 'Log out'
+
+    expect(page).to have_content('Signed out successfully.')
+  end
 end
