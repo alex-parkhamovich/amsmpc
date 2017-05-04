@@ -1,6 +1,7 @@
 /*
  *= require font-awesome
  *= require bootstrap_theme/style
+ *= require toastr
  *= require_tree .
  *= require_self
  */

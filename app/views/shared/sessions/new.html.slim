@@ -1,0 +1,16 @@
+.middle-box.text-center.m-t-0
+  = image_tag 'logo.png', size: '350x80'
+  h3= t 'session.welcome'
+  p= t "session.#{resource.class.name.underscore}.welcome_text"
+
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name), defaults: { input_html: { class: 'form-control' }}) do |f|
+    .form-group.no-side-margins
+      = f.input_field :email, required: false, autofocus: true, input_html: { class: 'form-control' }, label: false, placeholder: t('fields.email'), pattern: '.*'
+    .form-group.no-side-margins
+      = f.input_field :password, required: false, class: 'form-control', input_html: { class: 'form-control' }, label: false, placeholder: t('fields.password')
+    = f.button :submit, t('session.buttons.sign_in'), class: 'btn btn-primary block full-width m-b'
+    a href= new_password_path(resource)
+      small= t 'session.buttons.forgot_password'
+    p.text-muted.text-center.m-t-sm
+      small= t 'session.dont_have_an_account'
+    = link_to t('session.buttons.create_an_account'), new_registration_path(resource), class: 'btn btn-sm btn-white btn-block'

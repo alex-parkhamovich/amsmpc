@@ -27,4 +27,8 @@ html lang="en"
       #page-content.container
         .row
           .col-md-8.col-md-offset-2
+            = content_tag(:div, flash[:alert], class: "alert alert-danger") if flash[:alert]
+            = content_tag(:div, flash[:notice], class: "alert alert-success") if flash[:notice]
             = yield
+
+  

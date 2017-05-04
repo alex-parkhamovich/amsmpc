@@ -1,7 +1,7 @@
 class PatientAdmin::ApplicationController < ApplicationController
   before_action :authenticate_patient_admin_patient_user!
 
-  layout 'patient_admin'
+  layout 'dashboard'
 
   helper_method :current_user, :namespace
 

@@ -1,12 +1,16 @@
 class PatientAdmin::ProfilesController < PatientAdmin::ApplicationController
   before_action :set_user
-
-  def show
-  end
+  include ProfilesControllerConcern
 
   private
 
   def set_user
-    @user = current_user || DoctorUser.new
+    @resource = current_user || PatientUser.new
+  end
+
+  def update_params
+    params.require(:patient_user)
+      .permit(:first_name, :last_name, :birthdate, :email,
+        patient_personal_attributes: [:id, :address, :city, :gender, :phone, :id_photo, :face_photo])
   end
 end
